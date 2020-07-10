@@ -15,5 +15,4 @@ RUN apt update && apt install wget libasound2 libavahi-client3  libavahi-common3
 RUN wget ${GitUrlSnapcast}v${Version}/snapclient_${Version}-1_armhf.deb 
 RUN dpkg -i snapclient_${Version}-1_armhf.deb && rm -rf snapclient_${Version}-1_armhf.deb 
 
-#ENTRYPOINT 
 CMD ["sh","-c","if ! [ -z snapserverhost ] ; then /usr/bin/snapclient -h ${snapserverhost} ; else /usr/bin/snapclient ; fi "]
