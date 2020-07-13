@@ -9,7 +9,7 @@ ENV DIST_ARCH=amd64
 RUN echo "(|| DIST_ARCH == $DIST_ARCH ||"
 
 FROM --platform=$TARGETPLATFORM debian-$TARGETARCH
-ENV Version=0.20.0
+ARG Version=0.20.0
 ENV GitUrlSnapcast https://github.com/badaix/snapcast/releases/download/
 ENV USER snapclient
 ENV GROUP snapclient
